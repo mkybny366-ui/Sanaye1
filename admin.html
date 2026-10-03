@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>لوحة التحكم – حصصك اونلاين</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0d1c;--panel:#11152b;--panel2:#171c38;--line:#222a50;--tx:#f1f3fb;--mut:#9aa3c4;--amber:#f5a524;--blue:#3b82f6;--green:#22c55e;--r:18px;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="light"]{--bg:#f3f5fb;--panel:#fff;--panel2:#eef1fa;--line:#dde2f2;--tx:#14182e;--mut:#5b6486}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f3f5fb;--panel:#fff;--panel2:#eef1fa;--line:#dde2f2;--tx:#14182e;--mut:#5b6486}}
+*{box-sizing:inherit}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Cairo,Tahoma,sans-serif;min-height:100vh;display:flex}
+button{font:inherit;cursor:pointer;border:0;color:inherit}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+aside{width:250px;flex:none;background:var(--panel);border-inline-start:1px solid var(--line);padding:22px 14px;position:sticky;top:0;height:100vh;overflow:auto}
+.brand{font-weight:800;font-size:26px;margin:0 8px 22px}.brand b{color:var(--amber)}
+nav button{display:flex;gap:12px;align-items:center;width:100%;background:none;padding:12px 14px;border-radius:14px;color:var(--mut);font-weight:600;font-size:16px;margin-bottom:4px;text-align:start}
+nav button.on{background:#3a2c26;color:var(--amber)}
+:root[data-theme="light"] nav button.on{background:#fff1da}
+main{flex:1;min-width:0;padding:22px 28px 90px;max-width:1100px;margin:0 auto}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:22px}
+.top h1{margin:0;font-size:32px;font-weight:800}.top h1 b{color:var(--amber)}.top p{margin:4px 0 0;color:var(--mut)}
+.acts{display:flex;gap:10px}
+.btn{background:var(--blue);color:#fff;padding:11px 20px;border-radius:14px;font-weight:700}
+.btn.am{background:var(--amber);color:#2a1a00}.btn.gh{background:var(--panel2);color:var(--tx)}.btn.gr{background:#12331f;color:var(--green)}
+.ic{width:46px;height:46px;border-radius:50%;background:var(--panel2);display:grid;place-items:center;font-size:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px;margin-bottom:16px}
+.free{background:linear-gradient(135deg,#0d2a1f,#1f1a1c);border-color:#1e5a3a;padding:30px;color:#f1f3fb}
+.free h2{margin:6px 0;font-size:34px}.free h2 em{color:var(--green);font-style:normal}.free p{color:#9aa3c4;margin:0}
+.tag{color:var(--green);font-weight:700}
+.promo{background:linear-gradient(135deg,#0f1f45,#1b1a2c);border-color:#25448a;color:#f1f3fb}
+.promo h2{font-size:30px;margin:6px 0}.promo h2 em{color:var(--amber);font-style:normal}.promo .pr{color:var(--green);font-weight:700}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.msg{display:flex;gap:14px;align-items:center;background:#2a2118;border-color:#4a3822}
+:root[data-theme="light"] .msg{background:#fff4e0}
+.msg .ico{width:48px;height:48px;border-radius:14px;background:#3b2c1e;display:grid;place-items:center;font-size:22px}
+.msg p{margin:2px 0 0;color:var(--mut)}.msg div:nth-child(2){flex:1}
+input.s{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--tx);border-radius:14px;padding:16px 18px;font:inherit;margin-bottom:14px}
+.chips{display:flex;gap:8px;overflow-x:auto;margin-bottom:16px;padding-bottom:4px}
+.chips button{background:var(--panel2);padding:8px 16px;border-radius:99px;color:var(--mut);white-space:nowrap}
+.chips button.on{background:var(--amber);color:#2a1a00;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.crs{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.th{height:140px;display:grid;place-items:center;font-size:30px;font-weight:800;color:#fff;position:relative;text-shadow:0 2px 8px #0006}
+.th .b{position:absolute;top:10px;font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px;text-shadow:none}
+.b.l{right:10px;background:var(--green);color:#042}.b.r{left:10px;background:#000a;color:#fff}
+.crs h3{margin:14px 16px 10px;font-size:17px}
+.foot{display:flex;justify-content:space-between;align-items:center;margin:0 16px 16px;gap:8px}
+.foot span{color:var(--green);font-weight:800}.foot .btn{padding:8px 14px;font-size:14px;background:#12331f;color:var(--green)}
+.foot .btn.sub{background:var(--green);color:#042}
+.pdf .th{height:170px}.pdf .foot span{color:var(--amber)}.pdf .foot .btn{background:var(--blue);color:#fff}
+.gate{text-align:center;padding:50px 20px}.gate .big{font-size:46px}.gate h2{margin:10px 0 6px}.gate p{color:var(--mut);margin:0 0 18px}
+.post .who{display:flex;gap:10px;align-items:center;margin-bottom:10px}.post .av{width:44px;height:44px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800}
+.post small{color:var(--mut)}.post p{line-height:1.9;margin:0}
+textarea{width:100%;background:var(--panel2);border:1px solid var(--line);color:var(--tx);border-radius:14px;padding:14px;font:inherit;min-height:80px;margin-bottom:10px}
+.bar{height:10px;background:var(--panel2);border-radius:9px;overflow:hidden;margin-top:8px}.bar i{display:block;height:100%;background:var(--green)}
+.lead{display:flex;align-items:center;gap:14px}.lead .n{width:36px;height:36px;border-radius:50%;background:var(--panel2);display:grid;place-items:center;font-weight:800}.lead:nth-child(1) .n{background:var(--amber);color:#2a1a00}.lead b{flex:1}
+.ck{display:flex;gap:12px;align-items:center;cursor:pointer}.ck .bx{width:26px;height:26px;border-radius:8px;border:2px solid var(--line);display:grid;place-items:center;color:#042}.ck.on .bx{background:var(--green);border-color:var(--green)}
+dialog{background:var(--panel);color:var(--tx);border:1px solid var(--line);border-radius:var(--r);padding:24px;width:min(380px,90vw)}
+dialog::backdrop{background:#000a}dialog h3{margin:0 0 12px}
+dialog input{width:100%;background:var(--panel2);border:1px solid var(--line);color:var(--tx);border-radius:12px;padding:12px;font:inherit;margin-bottom:12px}
+#toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--tx);color:var(--bg);padding:10px 20px;border-radius:99px;font-weight:700;opacity:0;pointer-events:none;transition:opacity .2s;z-index:9}
+#toast.show{opacity:1}
+@media(max-width:820px){body{flex-direction:column}aside{width:100%;height:auto;position:sticky;z-index:5;padding:10px;border:0;border-bottom:1px solid var(--line)}.brand{display:none}nav{display:flex;gap:4px;overflow-x:auto}nav button{width:auto;white-space:nowrap;padding:9px 14px;margin:0}main{padding:16px 14px 80px}.top h1{font-size:24px}.free h2{font-size:26px}.promo h2{font-size:23px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+select.s{appearance:auto}a.btn{text-decoration:none;display:inline-block}.row .s{flex:1;min-width:140px;margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-bottom:16px}.stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px}.stat b{display:block;font-size:30px;color:var(--amber)}.stat span{color:var(--mut)}.chip{background:var(--panel2);padding:6px 12px;border-radius:99px}.chip a{cursor:pointer;color:#f87171;margin-inline-start:6px}small{color:var(--mut)}nav a.btn{text-decoration:none}
+</style>
+</head>
+<body>
+<aside><div class="brand">لوحة <b>التحكم</b></div><nav id="nav"></nav></aside>
+<main><div class="top"><div><h1 id="title"></h1></div></div><div id="main"></div></main>
+<div id="toast"></div>
+<script type="module">
+import{initializeApp}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import{initializeAuth,indexedDBLocalPersistence,browserLocalPersistence,inMemoryPersistence,onAuthStateChanged,signOut}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import{getFirestore,collection,collectionGroup,doc,onSnapshot,addDoc,setDoc,getDoc,deleteDoc,updateDoc}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const app=initializeApp({apiKey:"AIzaSyDwT41_PxNzKwFyshMr74ewkMgNbSVkFc8",authDomain:"thanawiy1.firebaseapp.com",projectId:"thanawiy1",storageBucket:"thanawiy1.firebasestorage.app",messagingSenderId:"679625471331",appId:"1:679625471331:web:db0cfd070689ec99950f56"}),auth=initializeAuth(app,{persistence:[indexedDBLocalPersistence,browserLocalPersistence,inMemoryPersistence]}),fs=getFirestore(app);
+const T=[["ov","نظرة عامة","📊"],["crs","الكورسات","📚"],["pdf","ملفات PDF","📄"],["cod","الأكواد","🔑"],["stu","الطلاب","🎓"],["pst","المنشورات","💬"]];
+const $=i=>document.getElementById(i),esc=t=>String(t).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const toast=t=>{const e=$("toast");e.textContent=t;e.className="show";clearTimeout(toast.t);toast.t=setTimeout(()=>e.className="",2800)};
+const tm=t=>t&&t.toMillis?t.toMillis():(typeof t=="number"?t:0),dt=t=>t?new Date(tm(t)).toLocaleDateString("ar-EG"):"-";
+let S={t:"ov",edit:null,fc:"all",sq:"",grant:""},F={},st="load",C=[],P=[],CODES=[],PR=[],SUBS=[],POSTS=[],BANS=[],BOARD=[],NEW=[],unsubs=[];
+const v=id=>($(id)||{value:""}).value.trim(),cn=id=>{const c=C.find(x=>x.id==id);return c?c.title:"(محذوف)"},pn=id=>{const p=PR.find(x=>x.id==id);return p?p.name:"؟"};
+const fail=e=>toast(e.code=="permission-denied"?"مرفوض: القواعد أو الصلاحيات":"خطأ: "+(e.code||e.message));
+const listen=(r,fn)=>unsubs.push(onSnapshot(r,s=>{fn(s.docs.map(d=>({...d.data(),id:d.id,_d:d})));render()},fail));
+const bySubs=cid=>SUBS.filter(s=>s.id==cid).length;
+const V={
+ov:()=>{const used=CODES.filter(k=>k.used).length,top=[...C].sort((a,b)=>bySubs(b.id)-bySubs(a.id)).slice(0,6),mx=Math.max(1,...top.map(c=>bySubs(c.id)));
+const s=(n,l)=>'<div class="stat"><b>'+n+'</b><span>'+l+'</span></div>';
+return'<div class="stats">'+s(PR.length,"طالب")+s(C.length,"كورس")+s(P.length,"ملف PDF")+s(SUBS.length,"اشتراك")+s(CODES.length-used,"كود متاح")+s(used,"كود مستخدم")+s(POSTS.length,"منشور")+s(BANS.length,"محظور")+'</div><div class="card"><b>الأكثر اشتراكًا</b>'+(top.length?top.map(c=>'<div style="margin-top:12px"><div class="lead"><b>'+esc(c.title)+'</b><span>'+bySubs(c.id)+'</span></div><div class="bar"><i style="width:'+bySubs(c.id)/mx*100+'%"></i></div></div>').join(""):'<p style="color:var(--mut)">لسه مفيش كورسات.</p>')+'</div>'},
+crs:()=>'<div class="card"><b>'+(S.edit?"تعديل كورس":"إضافة كورس")+'</b><div class="row"><input class="s" id="ct" placeholder="اسم الكورس" maxlength="120"><input class="s" id="cs" placeholder="المادة" maxlength="40"><input class="s" id="cl" placeholder="رابط الكورس (https://...)" dir="ltr"><input class="s" id="cp" placeholder="السعر (0 = مجاني)" inputmode="decimal"></div><div class="row"><button class="btn" data-a="savec">'+(S.edit?"حفظ التعديل":"إضافة")+'</button>'+(S.edit?'<button class="btn gh" data-a="canc">إلغاء</button>':"")+'</div></div><div class="card"><b>الكورسات ('+C.length+')</b>'+C.map(c=>'<div class="lead" style="padding:10px 0;flex-wrap:wrap"><b>'+esc(c.title)+'</b><span>'+esc(c.subject)+' · '+(c.free?"مجاني":esc(c.price)+" ج.م")+' · '+bySubs(c.id)+' مشترك</span><button class="btn gh" data-a="edc" data-i="'+c.id+'">تعديل</button><button class="btn gh" data-a="delc" data-i="'+c.id+'">حذف</button></div>').join("")+'</div>',
+pdf:()=>'<div class="card"><b>إضافة ملف PDF</b><div class="row"><input class="s" id="pt2" placeholder="اسم الملف" maxlength="120"><input class="s" id="ps" placeholder="المادة" maxlength="40"><input class="s" id="pl" placeholder="رابط الملف (https://...)" dir="ltr"><input class="s" id="pp" placeholder="السعر" inputmode="decimal"></div><button class="btn" data-a="addp">إضافة</button></div><div class="card"><b>الملفات ('+P.length+')</b>'+P.map(p=>'<div class="lead" style="padding:10px 0"><b>'+esc(p.title)+'</b><span>'+esc(p.subject)+' · '+(+p.price?esc(p.price)+" ج.م":"مجاني")+'</span><button class="btn gh" data-a="delpf" data-i="'+p.id+'">حذف</button></div>').join("")+'</div>',
+cod:()=>{const L=CODES.filter(k=>S.fc=="all"||(S.fc=="used")==!!k.used).sort((a,b)=>tm(b.ts)-tm(a.ts));return'<div class="card"><b>توليد أكواد</b><div class="row"><select class="s" id="cc">'+C.map(c=>'<option value="'+c.id+'">'+esc(c.title)+'</option>').join("")+'</select><input class="s" id="cnt" value="1" inputmode="numeric" style="max-width:100px"><button class="btn am" data-a="gen">توليد</button></div>'+(NEW.length?'<textarea readonly dir="ltr" style="margin-top:12px">'+NEW.join("\n")+'</textarea><button class="btn gh" data-a="copy">نسخ الأكواد</button>':"")+'</div><div class="chips">'+[["all","الكل"],["new","المتاحة"],["used","المستخدمة"]].map(x=>'<button class="'+(S.fc==(x[0]=="new"?"new":x[0])?"on":"")+'" data-a="fc" data-i="'+x[0]+'">'+x[1]+'</button>').join("")+'<button data-a="delused">حذف المستخدمة</button></div><div class="card">'+(L.length?L.map(k=>'<div class="lead" style="padding:8px 0;flex-wrap:wrap"><b dir="ltr">'+esc(k.id)+'</b><span>'+esc(cn(k.courseId))+(k.used?" · استخدمه "+esc(pn(k.by)):"")+'</span><button class="btn gh" data-a="delk" data-i="'+esc(k.id)+'">حذف</button></div>').join(""):'<p style="color:var(--mut)">مفيش أكواد.</p>')+'</div>'},
+stu:()=>{const q=S.sq.toLowerCase(),L=PR.filter(p=>(p.name+p.email).toLowerCase().includes(q)).sort((a,b)=>tm(b.ts)-tm(a.ts)),bn=id=>BANS.some(b=>b.id==id);
+return'<input class="s" id="sq" placeholder="ابحث بالاسم أو الإيميل..." value="'+esc(S.sq)+'"><div class="card"><b>منح كورس لطالب</b><div class="row"><select class="s" id="gc">'+C.map(c=>'<option value="'+c.id+'"'+(S.grant==c.id?" selected":"")+'>'+esc(c.title)+'</option>').join("")+'</select></div><small style="color:var(--mut)">اختار الكورس ثم اضغط "منح" بجانب الطالب.</small></div>'+
+L.map(p=>{const my=SUBS.filter(s=>s.uid==p.id),b=BOARD.find(x=>x.id==p.id);return'<div class="card"><div class="lead" style="flex-wrap:wrap"><b>'+esc(p.name)+(bn(p.id)?' <span style="color:#f87171">(محظور)</span>':"")+'</b><span dir="ltr">'+esc(p.email)+'</span><span>'+dt(p.ts)+' · '+(b?b.points:0)+' نقطة</span></div><div class="row">'+(my.map(s=>'<span class="chip">'+esc(cn(s.id))+' <a data-a="rev" data-i="'+p.id+'|'+s.id+'">✕</a></span>').join("")||'<small style="color:var(--mut)">مفيش اشتراكات</small>')+'</div><div class="row"><button class="btn gr" data-a="give" data-i="'+p.id+'">منح الكورس</button><button class="btn gh" data-a="ban" data-i="'+p.id+'">'+(bn(p.id)?"رفع الحظر":"حظر")+'</button></div></div>'}).join("")||'<div class="card gate"><h2>مفيش طلاب</h2></div>'},
+pst:()=>POSTS.length?POSTS.sort((a,b)=>tm(b.ts)-tm(a.ts)).map(p=>'<div class="card post"><div class="who"><div class="av">'+esc((p.name||"ط")[0])+'</div><div><b>'+esc(p.name)+'</b><br><small>'+esc(p.g)+' · '+dt(p.ts)+'</small></div><span style="margin-inline-start:auto;display:flex;gap:6px"><button class="btn gh" data-a="delp" data-i="'+p.id+'">حذف</button><button class="btn gh" data-a="ban" data-i="'+p.uid+'">حظر الكاتب</button></span></div><p>'+esc(p.t)+'</p></div>').join(""):'<div class="card gate"><h2>مفيش منشورات</h2></div>'};
+function render(){const m=$("main");$("nav").innerHTML=st=="ok"?T.map(x=>'<button class="'+(S.t==x[0]?"on":"")+'" data-a="t" data-i="'+x[0]+'">'+x[2]+' '+x[1]+'</button>').join("")+'<button data-a="out">🚪 خروج</button><a class="btn gh" href="./" style="display:block;margin-top:10px;text-align:center">⬅ الموقع</a>':"";
+if(st!="ok"){m.innerHTML='<div class="card gate"><div class="big">'+(st=="load"?"⏳":st=="in"?"🔐":"⛔")+'</div><h2>'+(st=="load"?"جاري التحميل...":st=="in"?"سجّل دخولك من الموقع الرئيسي أولًا":"حسابك مش أدمن")+'</h2>'+(st=="in"||st=="no"?'<a class="btn" href="./">الموقع الرئيسي</a>':"")+(st=="no"?'<p style="margin-top:14px">أضف UID حسابك في مجموعة admins من Firebase Console.</p>':"")+'</div>';return}
+const a=document.activeElement,fo=a&&a.id,fs_=fo&&a.selectionStart;$("title").textContent=T.find(x=>x[0]==S.t)[1];m.innerHTML=V[S.t]();
+for(const k in F)if($(k))$(k).value=F[k];if(fo&&$(fo)){$(fo).focus();try{$(fo).setSelectionRange(fs_,fs_)}catch(e){}}}
+document.addEventListener("input",e=>{const i=e.target.id;if(!i)return;F[i]=e.target.value;if(i=="sq"){S.sq=e.target.value;render()}if(i=="gc")S.grant=e.target.value});
+onAuthStateChanged(auth,async u=>{unsubs.forEach(f=>f());unsubs=[];if(!u){st="in";return render()}
+try{if(!(await getDoc(doc(fs,"admins",u.uid))).exists()){st="no";return render()}}catch(e){st="no";return render()}
+st="ok";listen(collection(fs,"courses"),r=>C=r.sort((a,b)=>a.ts-b.ts));listen(collection(fs,"pdfs"),r=>P=r.sort((a,b)=>a.ts-b.ts));listen(collection(fs,"codes"),r=>CODES=r);listen(collection(fs,"profiles"),r=>PR=r);
+listen(collectionGroup(fs,"subs"),r=>SUBS=r.map(x=>({id:x.id,uid:x._d.ref.parent.parent.id})));listen(collection(fs,"posts"),r=>POSTS=r);listen(collection(fs,"bans"),r=>BANS=r);listen(collection(fs,"board"),r=>BOARD=r);render()});
+const ask=m=>confirm(m),clr=(...k)=>k.forEach(x=>{delete F[x];if($(x))$(x).value=""});
+document.addEventListener("click",async e=>{const b=e.target.closest("[data-a]");if(!b)return;const a=b.dataset.a,i=b.dataset.i;
+try{
+if(a=="t"){S.t=i;render();scrollTo(0,0)}else if(a=="out")signOut(auth);else if(a=="fc"){S.fc=i;render()}
+else if(a=="canc"){S.edit=null;clr("ct","cs","cl","cp");render()}
+else if(a=="edc"){const c=C.find(x=>x.id==i),l=await getDoc(doc(fs,"courses",i,"content","main"));S.edit=i;F={ct:c.title,cs:c.subject,cp:String(c.price),cl:l.exists()?l.data().link:""};render();scrollTo(0,0)}
+else if(a=="savec"){const t=v("ct"),s=v("cs"),pr=Number(v("cp")||0),l=v("cl");if(!t||!s)return toast("اكتب الاسم والمادة");if(!(pr>=0&&pr<=100000))return toast("السعر غير صحيح");if(l&&!/^https?:\/\//.test(l))return toast("الرابط لازم يبدأ بـ https://");
+let id=S.edit;if(id)await updateDoc(doc(fs,"courses",id),{title:t,subject:s,price:pr,free:pr==0});else id=(await addDoc(collection(fs,"courses"),{title:t,subject:s,price:pr,free:pr==0,ts:Date.now()})).id;
+await setDoc(doc(fs,"courses",id,"content","main"),{link:l});S.edit=null;clr("ct","cs","cl","cp");render();toast("تم الحفظ")}
+else if(a=="delc"){if(!ask("حذف الكورس نهائيًا؟"))return;await deleteDoc(doc(fs,"courses",i,"content","main"));await deleteDoc(doc(fs,"courses",i));toast("تم الحذف")}
+else if(a=="addp"){const t=v("pt2"),l=v("pl"),pr=Number(v("pp")||0);if(!t)return toast("اكتب اسم الملف");if(!(pr>=0))return toast("السعر غير صحيح");if(l&&!/^https?:\/\//.test(l))return toast("الرابط لازم يبدأ بـ https://");await addDoc(collection(fs,"pdfs"),{title:t,subject:v("ps")||"عام",link:l,price:pr,ts:Date.now()});clr("pt2","ps","pl","pp");toast("تمت الإضافة")}
+else if(a=="delpf"){if(ask("حذف الملف؟"))await deleteDoc(doc(fs,"pdfs",i))}
+else if(a=="gen"){const cid=v("cc"),n=Math.min(50,Math.max(1,parseInt(v("cnt"))||1));if(!cid)return toast("أضف كورسًا أولًا");const A="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";NEW=[];
+for(let j=0;j<n;j++){let c="";crypto.getRandomValues(new Uint8Array(10)).forEach(x=>c+=A[x%A.length]);NEW.push(c)}
+await Promise.all(NEW.map(c=>setDoc(doc(fs,"codes",c),{courseId:cid,used:false,ts:Date.now()})));render();toast("تم توليد "+n+" كود")}
+else if(a=="copy"){await navigator.clipboard.writeText(NEW.join("\n"));toast("تم النسخ")}
+else if(a=="delk")await deleteDoc(doc(fs,"codes",i));
+else if(a=="delused"){const u=CODES.filter(k=>k.used);if(!u.length||!ask("حذف "+u.length+" كود مستخدم؟"))return;await Promise.all(u.map(k=>deleteDoc(doc(fs,"codes",k.id))))}
+else if(a=="give"){const cid=v("gc");if(!cid)return toast("اختار كورس");await setDoc(doc(fs,"users",i,"subs",cid),{ts:Date.now()});toast("تم المنح")}
+else if(a=="rev"){const[u,c]=i.split("|");if(ask("سحب الكورس من الطالب؟"))await deleteDoc(doc(fs,"users",u,"subs",c))}
+else if(a=="ban"){const bd=doc(fs,"bans",i);if(BANS.some(x=>x.id==i))await deleteDoc(bd);else if(ask("حظر المستخدم؟"))await setDoc(bd,{ts:Date.now()})}
+else if(a=="delp")await deleteDoc(doc(fs,"posts",i));
+}catch(err){fail(err)}});
+render();
+</script>
+</body>
+</html>
